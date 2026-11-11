@@ -156,6 +156,7 @@ export default {
       currentCommand: null,
       countdown: 0,
       timerInterval: null,
+      nextCardTimeout: null,
       showSettings: false,
       showLangPanel: false,
       pulseActive: false,
@@ -244,9 +245,9 @@ export default {
       // 触发脉冲效果
       this.triggerPulse()
 
-      // 如果有时长，启动倒计时
-      if (this.currentCommand && this.currentCommand.duration) {
-        this.startCountdown(this.currentCommand.duration)
+      // 新卡出现时从头计时；未设置时长的指令默认 30 秒
+      if (this.currentCommand) {
+        this.startCountdown(this.currentCommand.duration || 30)
       }
 
       // 震动反馈
@@ -276,7 +277,8 @@ export default {
       if (!this.keyVerified) return
       this.resetCard()
       // 短暂延迟后翻转新卡片
-      setTimeout(() => {
+      this.nextCardTimeout = setTimeout(() => {
+        this.nextCardTimeout = null
         this.flipCard()
       }, 300)
     },
@@ -287,9 +289,14 @@ export default {
     },
 
     resetCard() {
+      if (this.nextCardTimeout) {
+        clearTimeout(this.nextCardTimeout)
+        this.nextCardTimeout = null
+      }
       this.isFlipped = false
       this.currentCommand = null
       this.stopCountdown()
+      this.countdown = 0
     },
 
     startCountdown(seconds) {
@@ -383,6 +390,7 @@ export default {
 
   onUnload() {
     this.stopCountdown()
+    if (this.nextCardTimeout) clearTimeout(this.nextCardTimeout)
   }
 }
 </script>
