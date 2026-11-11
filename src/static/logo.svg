@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff2d55"/>
+      <stop offset="100%" style="stop-color:#c41e3a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#0a0a0a"/>
+
+  <!-- Subtle radial glow -->
+  <circle cx="512" cy="512" r="400" fill="url(#heartGradient)" opacity="0.1"/>
+
+  <!-- Heart shape with spark -->
+  <g transform="translate(512, 480)" filter="url(#glow)">
+    <!-- Main heart -->
+    <path d="M0 80
+             C0 80 -180 -80 -180 -160
+             C-180 -240 -100 -280 0 -180
+             C100 -280 180 -240 180 -160
+             C180 -80 0 80 0 80Z"
+          fill="url(#heartGradient)"/>
+
+    <!-- Spark/flame effect on top -->
+    <path d="M0 -200
+             C20 -240 10 -280 0 -320
+             C-10 -280 -20 -240 0 -200Z"
+          fill="#ff6b8a" opacity="0.9"/>
+    <path d="M-30 -180
+             C-20 -210 -25 -240 -30 -260
+             C-35 -240 -40 -210 -30 -180Z"
+          fill="#ff6b8a" opacity="0.7"/>
+    <path d="M30 -180
+             C40 -210 35 -240 30 -260
+             C25 -240 20 -210 30 -180Z"
+          fill="#ff6b8a" opacity="0.7"/>
+  </g>
+
+  <!-- Small sparkles -->
+  <circle cx="320" cy="300" r="4" fill="#ff6b8a" opacity="0.6"/>
+  <circle cx="700" cy="350" r="3" fill="#ff6b8a" opacity="0.5"/>
+  <circle cx="280" cy="500" r="3" fill="#ff6b8a" opacity="0.4"/>
+  <circle cx="750" cy="550" r="4" fill="#ff6b8a" opacity="0.5"/>
+</svg>

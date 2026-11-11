@@ -1,0 +1,78 @@
+{
+  "pages": [
+    {
+      "path": "pages/age-gate/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "Age Verification",
+        "backgroundColor": "#0a0a0a",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/splash/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "Midnight Spark",
+        "backgroundColor": "#0a0a0a",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "Midnight Spark",
+        "backgroundColor": "#0a0a0a",
+        "backgroundColorTop": "#0a0a0a",
+        "backgroundColorBottom": "#0a0a0a",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/privacy/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "Privacy Policy",
+        "backgroundColor": "#0a0a0a",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/terms/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "Terms of Service",
+        "backgroundColor": "#0a0a0a",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": false
+        }
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "Midnight Spark",
+    "navigationBarBackgroundColor": "#0a0a0a",
+    "backgroundColor": "#0a0a0a",
+    "backgroundColorTop": "#0a0a0a",
+    "backgroundColorBottom": "#0a0a0a",
+    "app-plus": {
+      "background": "#0a0a0a"
+    }
+  }
+}
